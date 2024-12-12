@@ -7,13 +7,15 @@
 # пароль result, для одного введённого числа
 
 
-num1 = a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-num2 = [3, 21]
-num3 = range(21)
 
-b = []
-print(a)
+for elem in range(3,21):
+    password = f'{elem} - '
+    for x in range(1, elem):
+        for y in range(x+1, elem):
+            if elem % (x+y) == 0:
+                password += f'{x}{y} '
 
-i = 0
-for i in range(3, 21):
-    print(i, '')
+    print(password)
+
+
+#
