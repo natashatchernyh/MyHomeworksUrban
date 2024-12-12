@@ -8,6 +8,8 @@ for elem in range(3,21):
     print(result)
 
 
+
+
 # 2 inserts
 # от 3 до 20
 # пары чисел друг за другом
