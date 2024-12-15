@@ -11,12 +11,12 @@ def string_info (string):            # принимает аргумент ст�
     str_lower = string.lower()          # меняем на нижний регистр
     b_tuple = (a_len, str_upper, str_lower)    #переменная для кортежа
     return (b_tuple)        #возвращает кортеж(длина строки, строка в верхнем регистре, строка в нижнем регистре)
-                            #?
 
-def is_contains (line, list_to_search):
+
+def is_contains (string, list_to_search):
     count_calls()
-    line_lower = line.lower # привести в нижний регистр
-    return line_lower in (line() in list_to_search[])
+    string_lower = string.lower # привести в нижний регистр
+    return string_lower in (string_lower in list_to_search)
 
 
 print(string_info('Capybara'))
