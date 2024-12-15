@@ -1,27 +1,33 @@
-calls = 0   # глобальная переменная
-
-def count_calls ():     # подсчитыват вызовы остальных функций.
-    global calls        # указываем ,что calls это глобальное пространство
-    calls += 1          # добавляем на счетчик циклов прохода/функций
-
-def string_info (string):            # принимает аргумент строку
-    count_calls()                     # подсчитывает вызов функции, добавляет кол-во в def count calls
-    a_len = len(string)                  # длина
-    str_upper = string.upper()          # меняем на верхний регистр
-    str_lower = string.lower()          # меняем на нижний регистр
-    b_tuple = (a_len, str_upper, str_lower)    #переменная для кортежа
-    return (b_tuple)        #возвращает кортеж(длина строки, строка в верхнем регистре, строка в нижнем регистре)
+calls = 0
 
 
-def is_contains (string, list_to_search):
+def count_calls():
+    global calls
+    calls += 1
+
+
+def string_info(string):
     count_calls()
-    string_lower = string.lower # привести в нижний регистр
-    return string_lower in (string_lower in list_to_search)
+    a_len = len(string)
+    str_upper = string.upper()
+    str_lower = string.lower()
+    b_tuple = (a_len, str_upper, str_lower)
+    return (b_tuple)
+
+
+def is_contains(string, list_to_search):
+    count_calls()
+    string_lower = string.lower()
+
+    if string_lower in (elem.lower() for elem in list_to_search):
+        return "True"
+    else:
+        return "False"
 
 
 print(string_info('Capybara'))
 print(string_info('Armageddon'))
-print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
-print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
 
 print(calls)
