@@ -1,3 +1,4 @@
+#Изменила 10,11,58,59,65,66
 import tkinter as tk
 
 def get_values():
