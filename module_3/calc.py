@@ -1,4 +1,3 @@
-
 import tkinter as tk
 
 def get_values():
@@ -7,8 +6,8 @@ def get_values():
     return num1, num2
 
 def insert_values(value):
-    answer_entry.delete(0, 'end')
-    answer_entry.insert(0, res)
+    result_entry.delete(0, 'end')           #Используем result_entry вместо answer_entry
+    result_entry.insert(0, value)             #убрать res и заменить на value
 
 def add():
     num1,num2 = get_values()
@@ -55,15 +54,15 @@ number1_entry.place(x = 50, y = 75)
 number2_entry = tk.Entry(window, width = 50,)
 number2_entry.place(x = 50, y = 150)
 
-answer_entry = tk.Entry(window, width = 50,)
-answer_entry.place(x = 50, y = 300)
+result_entry = tk.Entry(window, width = 50,)        #Используем result_entry вместо answer_entry
+result_entry.place(x = 50, y = 300)                 #Используем result_entry вместо answer_entry
 
 number1 = tk.Label(window, text = "Введите первое число:")
 number1.place(x=100,  y = 50)
 number2 = tk.Label(window, text = "Введите второе число:")
 number2.place(x=100,  y = 115)
-answer_entry = tk.Label(window, text = "Ответ")
-answer_entry.place(x = 20, y = 270)
+result_entry = tk.Label(window, text = "Ответ")     #Используем result_entry вместо answer_entry
+result_entry.place(x = 20, y = 270)                 #Используем result_entry вместо answer_entry
 
 window.mainloop()
 
