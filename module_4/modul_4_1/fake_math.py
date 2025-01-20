@@ -8,3 +8,4 @@ def divide(first,second):
         return('Ошибка')
     else:
         return(first/second)
+
